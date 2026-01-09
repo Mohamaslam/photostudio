@@ -1,1 +1,69 @@
-    
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Booking / Inquiry - Sunrise Photo Studio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .container { max-width:700px; margin:2rem auto; padding:1rem; }
+    form { display:grid; gap:.75rem; }
+    label { font-weight:600; }
+    input, select, textarea { padding:.6rem; border:1px solid #ddd; border-radius:6px; width:100%; box-sizing:border-box; }
+    .btn { background:#c77; color:white; padding:.5rem 1rem; border-radius:6px; border:0; }
+    .muted { color:#666; font-size:.95rem; }
+    .message { padding:.75rem; border-radius:6px; }
+    .message.success { background:#e6ffed; border:1px solid #b6f0bf; }
+    .message.error { background:#fff0f0; border:1px solid #f0b6b6; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Booking / Inquiry</h1>
+    <p class="muted">Provide details about your event and we'll get back to you soon.</p>
+
+    <div id="applyMessage" aria-live="polite"></div>
+
+    <form id="applyForm" novalidate>
+      <div>
+        <label for="full_name">Full name</label>
+        <input id="full_name" name="full_name" type="text" required placeholder="Jane Doe" />
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required placeholder="you@example.com" />
+      </div>
+
+      <div>
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel" placeholder="+1 234 567 890" />
+      </div>
+
+      <div>
+        <label for="event_type">Event type</label>
+        <select id="event_type" name="event_type">
+          <option value="Wedding">Wedding</option>
+          <option value="Portrait">Portrait</option>
+          <option value="Event">Event</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="message">Message / Requirements</label>
+        <textarea id="message" name="message" rows="6" required placeholder="Tell us about your event, date preferences, location, and budget"></textarea>
+      </div>
+
+      <div>
+        <button type="submit" class="btn">Submit Application</button>
+      </div>
+    </form>
+
+    <p class="muted">You must be <a href="/login.html">logged in</a> to submit an application.</p>
+  </main>
+
+  <script src="js/auth.js" defer></script>
+  <script src="js/apply.js" defer></script>
+</body>
+</html>    

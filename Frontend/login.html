@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - Sunrise Photo Studio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .container { max-width:500px; margin:3rem auto; padding:1rem; }
+    form { display:grid; gap:.75rem; }
+    label { font-weight:600; }
+    input { padding:.6rem; border:1px solid #ddd; border-radius:6px; width:100%; box-sizing:border-box; }
+    .btn { background:#c77; color:white; padding:.5rem 1rem; border-radius:6px; border:0; }
+    .error { color:#b00020; margin-top:.25rem; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Login</h1>
+    <p class="muted">Sign in to comment, apply, and manage your account.</p>
+
+    <form id="loginForm" novalidate>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required placeholder="you@example.com" />
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required placeholder="Your password" />
+      </div>
+
+      <div>
+        <button type="submit" class="btn">Log in</button>
+      </div>
+
+      <div id="loginError" class="error" aria-live="polite"></div>
+
+      <p class="muted">Don't have an account? <a href="/register.html">Register</a></p>
+    </form>
+  </main>
+
+  <script src="js/auth.js" defer></script>
+</body>
+</html>
